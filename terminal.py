@@ -1,3 +1,5 @@
 import subprocess
 
-subprocess.run("dir",shell=True)
+result = subprocess.run("dir", shell=True, capture_output=True, universal_newlines=True)
+
+print(result.stdout)
