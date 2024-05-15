@@ -1,5 +1,11 @@
 import subprocess
 
-result = subprocess.run("dir", shell=True, capture_output=True, universal_newlines=True)
+while True:
+    commande = input("Entrez une commande: ")
+    if commande == "exit":
+        break
 
-print(result.stdout)
+    result = subprocess.run(commande, shell=True, capture_output=True, universal_newlines=True)
+
+    print(result.stdout)
+    print(result.stderr)
